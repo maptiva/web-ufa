@@ -1,0 +1,86 @@
+---
+import { Image } from 'astro:assets';
+import marisaImg from '../assets/marisa-01.jpg';
+---
+
+<section class="marisa" id="marisa">
+  <div class="container marisa-grid">
+    <div class="marisa-text">
+      <h2>No es solo peluquería. Es vínculo.</h2>
+      <p>
+        Hace 35 años que trabajo con perritos como si fueran de mi familia —
+        porque para sus dueños, lo son. En UFA no hay jaulas ni apuros: hay
+        camitas cómodas, agua fresca, música suave y todo el tiempo que cada
+        bichito necesite para confiar.
+      </p>
+      <p class="sign">Marisa · UFA Paraná</p>
+      <blockquote>
+        “Es como tener la médica de cabecera.”
+      </blockquote>
+    </div>
+    <div class="marisa-photo">
+      <Image
+        src={marisaImg}
+        alt="Marisa con un perrito en UFA"
+        widths={[600, 900, 1200]}
+        sizes="(max-width: 760px) 100vw, 40vw"
+        format="webp"
+        quality={78}
+        class="photo"
+        loading="lazy"
+      />
+    </div>
+  </div>
+</section>
+
+<style>
+  .marisa {
+    padding-block: clamp(3rem, 8vh, 5.5rem);
+  }
+  .marisa-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(1.5rem, 4vw, 3.5rem);
+    align-items: center;
+  }
+  .marisa h2 {
+    font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+    font-weight: 900;
+    margin: 0 0 1rem;
+    text-wrap: balance;
+  }
+  .marisa-text p {
+    margin: 0 0 1rem;
+    color: var(--ink-soft);
+    font-size: 1.05rem;
+  }
+  .sign {
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .marisa blockquote {
+    margin: 1.4rem 0 0;
+    padding: 1rem 1.3rem;
+    border-left: 4px solid var(--terra);
+    background: var(--cream-2);
+    border-radius: 0 var(--radius) var(--radius) 0;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--ink);
+  }
+  .photo {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 2;
+    object-fit: cover;
+    border-radius: var(--radius);
+  }
+  @media (max-width: 760px) {
+    .marisa-grid {
+      grid-template-columns: 1fr;
+    }
+    .photo {
+      aspect-ratio: 16 / 10;
+    }
+  }
+</style>

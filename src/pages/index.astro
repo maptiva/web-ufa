@@ -1,14 +1,18 @@
 ---
 /**
- * UFA · Home v0 — header + hero (iteración 1).
- * Próximas secciones (wireframe): tira confianza, Marisa, servicios,
- * diferencia, especialidades, galería, opiniones, FAQ, contacto.
+ * UFA · Home v0 — header + hero + confianza + Marisa (iteración 2).
+ * Próximas secciones (wireframe): servicios, diferencia, especialidades,
+ * galería, opiniones, FAQ, contacto.
  * Ver docs/wireframe-home-v1.md
  */
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
+import TrustStrip from '../components/TrustStrip.astro';
+import Marisa from '../components/Marisa.astro';
 ---
 
 <BaseLayout>
   <Hero />
+  <TrustStrip />
+  <Marisa />
 </BaseLayout>

@@ -29,7 +29,7 @@
 
 - **Fondo:** `13.jpg` (1800×1200, Marisa trabajando — provisorio, a validar si queda).
 - **Headline (grande):** `Increíble lo que logra.`
-- **Sub (mediano):** `U.F.A. — una forma amable… de vincularnos.`
+- **Sub (mediano):** `U.F.A. — Una forma amable… de vincularnos.`
 - **Apoyo (chico):** `Peluquería canina en Paraná · 35 años de oficio · trato familiar y sin jaulas.`
 - **CTAs:**
   - Primario → `Reservar por WhatsApp`
