@@ -1,0 +1,97 @@
+---
+import { waLink, WA_RESERVA } from '../config';
+
+const msg = (s: string) =>
+  waLink(`Hola Marisa, quiero consultar por ${s} para mi perrito/a`);
+
+const servicios = [
+  { n: 'Baño', d: 'Agua calientita, shampoo suave y masajes que relajan.', m: 'el baño' },
+  { n: 'Corte', d: 'De raza o higiénico, con paciencia y sin apuros.', m: 'el corte' },
+  { n: 'Deslanado', d: 'Removemos el pelo muerto para una muda sana y sin nudos.', m: 'el deslanado' },
+  { n: 'Spa Canino', d: 'Baño de inmersión y relax total. Un mimo completo.', m: 'el spa canino' },
+  { n: 'Corte de uñas', d: 'Con cuidado y sin estrés, en el momento justo.', m: 'el corte de uñas' },
+  { n: 'Higiene de oídos', d: 'Limpieza y depilado suaves para oídos sanos.', m: 'la higiene de oídos' },
+  { n: 'Sacos perianales', d: 'Vaciado e higiene completa con manos expertas.', m: 'el vaciado de sacos perianales' },
+  { n: 'Traslado', d: 'Buscamos y traemos a tu perrito, según el caso.', m: 'el traslado' },
+  { n: 'Domicilios', d: 'Atendemos en tu casa, en su propio ambiente.', m: 'el servicio a domicilio' },
+  { n: 'Informe + asesoramiento', d: 'Te contamos cómo está tu perrito y qué necesita.', m: 'la observación e informe del estado general' },
+];
+---
+
+<section class="servicios" id="servicios">
+  <div class="container">
+    <h2>Servicios</h2>
+    <p class="nota">Los precios se consultan por WhatsApp, según cada perrito.</p>
+    <div class="grid">
+      {servicios.map((s) => (
+        <article class="card">
+          <h3>{s.n}</h3>
+          <p>{s.d}</p>
+          <a href={msg(s.m)} target="_blank" rel="noopener" class="consultar">
+            Consultar →
+          </a>
+        </article>
+      ))}
+    </div>
+    <div class="cierre">
+      <a class="btn btn-wa" href={WA_RESERVA} target="_blank" rel="noopener">
+        Contanos de tu perrito por WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .servicios {
+    background: var(--cream-2);
+    padding-block: clamp(3rem, 8vh, 5.5rem);
+  }
+  .servicios h2 {
+    font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+    font-weight: 900;
+    margin: 0 0 0.4rem;
+  }
+  .nota {
+    color: var(--ink-soft);
+    margin: 0 0 2rem;
+    font-size: 1.05rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.1rem;
+  }
+  .card {
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid rgba(74, 44, 26, 0.1);
+  }
+  .card h3 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--terra);
+  }
+  .card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    flex: 1;
+  }
+  .consultar {
+    font-weight: 800;
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .consultar:hover {
+    color: var(--terra);
+  }
+  .cierre {
+    margin-top: 2.2rem;
+    text-align: center;
+  }
+</style>
