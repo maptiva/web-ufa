@@ -1,0 +1,73 @@
+---
+const grupos = [
+  {
+    t: 'Perritos viejitos',
+    d: 'Paciencia, movimientos suaves y todo el tiempo que necesiten. Como Betún, que lleva 10 años viniendo.',
+  },
+  {
+    t: 'Cachorros',
+    d: 'Primeras experiencias con calma y juego, para que vuelvan felices.',
+  },
+  {
+    t: 'Con miedo o maltrato previo',
+    d: 'Confianza a su ritmo, sin forzar nada. Como Luna, que llegó con miedo a todo.',
+  },
+  {
+    t: 'Convalecientes o enfermos',
+    d: 'Cuidado extra y atención a cada detalle de su salud.',
+  },
+  {
+    t: 'Todas las razas y tamaños',
+    d: 'Con preferencia por pequeños y medianos, por el bien de todos.',
+  },
+];
+---
+
+<section class="espec" id="especialidades">
+  <div class="container">
+    <h2>En buenas manos, sobre todo ellos.</h2>
+    <div class="grid">
+      {grupos.map((g) => (
+        <article class="card">
+          <h3>{g.t}</h3>
+          <p>{g.d}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .espec {
+    padding-block: clamp(3rem, 8vh, 5.5rem);
+  }
+  .espec h2 {
+    font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+    font-weight: 900;
+    margin: 0 0 2rem;
+    text-wrap: balance;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.1rem;
+  }
+  .card {
+    background: var(--white);
+    border: 1px solid rgba(74, 44, 26, 0.1);
+    border-top: 4px solid var(--terra);
+    border-radius: var(--radius);
+    padding: 1.4rem 1.3rem;
+  }
+  .card h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.12rem;
+    font-weight: 800;
+    color: var(--ink);
+  }
+  .card p {
+    margin: 0;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+  }
+</style>
