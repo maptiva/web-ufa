@@ -43,8 +43,8 @@
 Fila horizontal con íconos simples:
 
 1. `35 años de oficio`
-2. `Sin bozales · sin jaulas`
-3. `Especialistas en viejitos y cachorros`
+2. `Sin bozales · Sin jaulas`
+3. `Especialidad en viejitos y cachorros`
 4. `Paraná · traslados y domicilios`
 
 ---
