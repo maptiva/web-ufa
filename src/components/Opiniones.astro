@@ -1,0 +1,133 @@
+---
+/**
+ * Opiniones — testimonios reales (fuente: borrador/testimonios.csv).
+ * 3 historias destacadas + frases cortas. Sin JS en v0 (grilla estática).
+ * TODO(videos): 9 testimonios traen video en Drive — descargar, comprimir y
+ * alojar al implementar (evaluar peso/formato).
+ * TODO(cta): agregar link al Forms de testimonios cuando exista (Opción A).
+ */
+const destacadas = [
+  {
+    frase:
+      'Es con la única peluquera que dejo a Betún con confianza y tranquilidad… a veces son 4 horas de su trabajo para desanudarlo rulito por rulito.',
+    quien: 'Andrea Torchia y Betún',
+    dato: 'Caniche toy, 11 años · cliente hace 10',
+  },
+  {
+    frase:
+      'Luna es una perrita que suele tener mucho miedo a todo y Marisa se ganó su confianza y amor gracias a lo excelente que es.',
+    quien: 'Juanma y Vale con Luna',
+    dato: 'Cliente histórico',
+  },
+  {
+    frase:
+      'UFA es mucho más que una peluquería canina: es un lugar donde FINI está cuidada, querida y en las mejores manos.',
+    quien: 'Familia de Fini',
+    dato: 'Bichón Frisé, 12 años · desde cachorrita',
+  },
+];
+
+const cortas = [
+  { f: 'Te reciben con besos y mucha alegría.', q: 'María Rosa · Pepa y Simón' },
+  { f: 'No es solo higiene y estética. Un mimo para mascota y dueñes.', q: 'Adriana Beade · Tina' },
+  { f: 'La mejor peluquería canina del mundo.', q: 'Eliana · Cala' },
+  { f: 'Excelencia: profesionalidad, confianza y trato amoroso.', q: 'Juan Eloy · Beto y Oliver' },
+  { f: 'La persona más dulce y cariñosa con los perritos.', q: 'Alejandra · Junior' },
+  { f: 'Confianza plena: trato, dedicación y paciencia.', q: 'Leo · Alma y Mía' },
+  { f: 'Responsabilidad, confianza y amor.', q: 'Bianca' },
+  { f: 'Delicadeza.', q: 'Ale · Mumy' },
+];
+---
+
+<section class="opiniones" id="opiniones">
+  <div class="container">
+    <h2>Lo que dicen las familias</h2>
+    <div class="destacadas">
+      {destacadas.map((t) => (
+        <article class="story">
+          <p class="frase">“{t.frase}”</p>
+          <p class="quien">{t.quien}</p>
+          <p class="dato">{t.dato}</p>
+        </article>
+      ))}
+    </div>
+    <div class="cortas">
+      {cortas.map((t) => (
+        <article class="mini">
+          <p>“{t.f}”</p>
+          <cite>{t.q}</cite>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .opiniones {
+    padding-block: clamp(3rem, 8vh, 5.5rem);
+  }
+  .opiniones h2 {
+    font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+    font-weight: 900;
+    margin: 0 0 2rem;
+    text-wrap: balance;
+  }
+  .destacadas {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.1rem;
+    margin-bottom: 1.1rem;
+  }
+  .story {
+    background: var(--cream-2);
+    border-radius: var(--radius);
+    padding: 1.6rem 1.4rem;
+    border-top: 4px solid var(--terra);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+  .frase {
+    margin: 0;
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--ink);
+    flex: 1;
+  }
+  .quien {
+    margin: 0;
+    font-weight: 800;
+    color: var(--terra);
+  }
+  .dato {
+    margin: 0;
+    font-size: 0.88rem;
+    color: var(--ink-soft);
+  }
+  .cortas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
+  }
+  .mini {
+    background: var(--white);
+    border: 1px solid rgba(74, 44, 26, 0.1);
+    border-radius: var(--radius);
+    padding: 1.1rem 1.2rem;
+  }
+  .mini p {
+    margin: 0 0 0.4rem;
+    font-weight: 700;
+    font-size: 0.98rem;
+  }
+  .mini cite {
+    font-style: normal;
+    font-size: 0.86rem;
+    color: var(--ink-soft);
+  }
+  @media (max-width: 860px) {
+    .destacadas {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
