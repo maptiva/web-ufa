@@ -1,5 +1,5 @@
 // Configuración central del sitio UFA.
-export const WHATSAPP_NUMBER = '5491163568535';
+export const WHATSAPP_NUMBER = '5491126107586';
 
 export const waLink = (msg: string) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`;

@@ -1,0 +1,119 @@
+---
+const noHacemos = [
+  'No usamos bozales, cogoteras ni mordazas.',
+  'No usamos jaulas para la espera: camitas cómodas y gancho para la correa.',
+  'No nos apuramos: turnos espaciados para que nadie espere ansioso.',
+];
+
+const siHacemos = [
+  'Shampoo y crema diluidos en agua calientita, sin contrastes incómodos.',
+  'Masajes relajantes durante el baño (aceite de tea tree en algunos casos).',
+  'Baños de inmersión cuando lo toleran: los relaja profundamente.',
+  'Movimientos suaves, silencio y música de mantras o relajación.',
+  'Ambiente cálido y confortable, con agua fresca y descanso siempre disponibles.',
+];
+---
+
+<section class="diferencia" id="diferencia">
+  <div class="container">
+    <h2>Cuidado y respeto, en cada detalle.</h2>
+    <div class="cols">
+      <article class="col no">
+        <h3>Lo que NO hacemos</h3>
+        <ul>
+          {noHacemos.map((t) => <li>{t}</li>)}
+        </ul>
+      </article>
+      <article class="col si">
+        <h3>Lo que SÍ hacemos</h3>
+        <ul>
+          {siHacemos.map((t) => <li>{t}</li>)}
+        </ul>
+      </article>
+    </div>
+    <blockquote>
+      “Trabajando con amor, respeto y confianza se logra la total colaboración
+      de nuestro amigo.”
+      <cite>— Marisa</cite>
+    </blockquote>
+  </div>
+</section>
+
+<style>
+  .diferencia {
+    padding-block: clamp(3rem, 8vh, 5.5rem);
+  }
+  .diferencia h2 {
+    font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+    font-weight: 900;
+    margin: 0 0 2rem;
+    text-wrap: balance;
+  }
+  .cols {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+  }
+  .col {
+    border-radius: var(--radius);
+    padding: 1.6rem 1.5rem;
+    border: 1px solid rgba(74, 44, 26, 0.12);
+  }
+  .col h3 {
+    margin: 0 0 1rem;
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+  .col ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  .col li {
+    padding-left: 1.9rem;
+    position: relative;
+    color: var(--ink-soft);
+  }
+  .col li::before {
+    position: absolute;
+    left: 0;
+    font-weight: 900;
+  }
+  .no {
+    background: #fdf1ec;
+  }
+  .no li::before {
+    content: '✕';
+    color: #b3402a;
+  }
+  .si {
+    background: #f0f7ec;
+  }
+  .si li::before {
+    content: '✓';
+    color: #2e7d32;
+  }
+  .diferencia blockquote {
+    margin: 2rem auto 0;
+    max-width: 640px;
+    text-align: center;
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .diferencia cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-style: normal;
+    font-weight: 800;
+    color: var(--terra);
+  }
+  @media (max-width: 760px) {
+    .cols {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
