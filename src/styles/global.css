@@ -1,0 +1,68 @@
+/* UFA · tokens cálidos — "cálido y hogareño, tierno y colorido" (relevamiento Marisa) */
+
+:root {
+  --cream: #fff7ed; /* fondo cálido */
+  --cream-2: #ffedd5; /* fondo alterno suave */
+  --ink: #4a2c1a; /* marrón cálido (texto/títulos) */
+  --ink-soft: #7c4a2d; /* marrón claro (texto secundario) */
+  --terra: #c2571b; /* terracota (acentos) */
+  --terra-dark: #9a4214;
+  --rose: #f2b8a0; /* durazno tierno (detalles) */
+  --wa: #25d366; /* verde WhatsApp (solo botón WA) */
+  --wa-dark: #1da851;
+  --white: #ffffff;
+  --radius: 1.25rem;
+  --font: 'Nunito', 'Segoe UI Rounded', 'Hiragino Maru Gothic ProN',
+    system-ui, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font);
+  background: var(--cream);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  width: min(1120px, 92vw);
+  margin-inline: auto;
+}
+
+/* Botones */
+.btn {
+  display: inline-block;
+  padding: 0.85rem 1.6rem;
+  border-radius: 999px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+.btn-wa {
+  background: var(--wa);
+  color: #fff;
+}
+.btn-ghost {
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  outline: 2px solid rgba(255, 255, 255, 0.7);
+}

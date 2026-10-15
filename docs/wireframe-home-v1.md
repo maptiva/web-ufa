@@ -3,7 +3,7 @@
 > **Estado:** puntapié inicial. Todo iterable. Nada definitivo.
 > **Fuente de contenido:** `Relevamiento web UFA (Respuestas).csv` + doc estratégico.
 > **Estructura:** landing de una sola página (mobile-first). Secciones numeradas de arriba hacia abajo.
-> **Fotos:** hero pendiente de elección (Ale). Galería = 17 fotos optimizadas WebP (pendiente).
+> **Fotos:** hero = `13.jpg` (provisorio, a validar). Galería = 17 fotos optimizadas WebP (pendiente).
 > **Contacto:** WhatsApp (único canal). Sin precios ni horarios en la web.
 
 ---
@@ -12,7 +12,7 @@
 
 - **Title:** `UFA · Una Forma Amable — Peluquería Canina en Paraná`
 - **Meta description (borrador):** `Peluquería canina en Paraná con 35 años de oficio. Trato familiar, amoroso y sin jaulas. Viejitos, cachorros y perritos con miedo, bienvenidos. Consultanos por WhatsApp.`
-- **OG image:** foto hero (cuando se defina).
+- **OG image:** foto hero (`13.jpg`, provisorio).
 
 ---
 
@@ -27,7 +27,7 @@
 
 ## 2. Hero (pantalla completa)
 
-- **Fondo:** foto elegida por Ale (Marisa trabajando, cálida y real).
+- **Fondo:** `13.jpg` (1800×1200, Marisa trabajando — provisorio, a validar si queda).
 - **Headline (grande):** `Increíble lo que logra.`
 - **Sub (mediano):** `U.F.A. — una forma amable… de vincularnos.`
 - **Apoyo (chico):** `Peluquería canina en Paraná · 35 años de oficio · trato familiar y sin jaulas.`

@@ -1,0 +1,89 @@
+---
+import { Image } from 'astro:assets';
+import heroImg from '../assets/hero-13.jpg';
+import { WA_RESERVA } from '../config';
+---
+
+<section class="hero" id="inicio">
+  <Image
+    src={heroImg}
+    alt="Marisa trabajando con un perrito en UFA"
+    widths={[768, 1200, 1800]}
+    sizes="100vw"
+    format="webp"
+    quality={78}
+    class="hero-bg"
+    loading="eager"
+    fetchpriority="high"
+  />
+  <div class="hero-veil" aria-hidden="true"></div>
+  <div class="container hero-content">
+    <h1>Increíble lo que logra.</h1>
+    <p class="sub">U.F.A. — una forma amable… de vincularnos.</p>
+    <p class="apoyo">
+      Peluquería canina en Paraná · 35 años de oficio · trato familiar y sin
+      jaulas.
+    </p>
+    <div class="ctas">
+      <a class="btn btn-wa" href={WA_RESERVA} target="_blank" rel="noopener">
+        Reservar por WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="#servicios">Conocer los servicios</a>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 100svh;
+    display: flex;
+    align-items: flex-end;
+    overflow: clip;
+    color: #fff;
+  }
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .hero-veil {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to top,
+      rgba(46, 24, 10, 0.82) 0%,
+      rgba(46, 24, 10, 0.45) 45%,
+      rgba(46, 24, 10, 0.12) 75%,
+      rgba(46, 24, 10, 0.05) 100%
+    );
+  }
+  .hero-content {
+    position: relative;
+    padding-bottom: clamp(3rem, 10vh, 6rem);
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4.2rem);
+    font-weight: 900;
+    line-height: 1.05;
+    margin: 0 0 0.5rem;
+    text-wrap: balance;
+  }
+  .sub {
+    font-size: clamp(1.15rem, 2.6vw, 1.6rem);
+    font-weight: 700;
+    margin: 0 0 0.5rem;
+  }
+  .apoyo {
+    font-size: 1rem;
+    opacity: 0.92;
+    margin: 0 0 1.6rem;
+  }
+  .ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+  }
+</style>
