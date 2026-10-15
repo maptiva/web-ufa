@@ -1,0 +1,110 @@
+---
+import { waLink } from '../config';
+
+const WA_CONSULTA = waLink('Hola Marisa, tengo una consulta');
+
+/**
+ * FAQ — las 9 preguntas las dio Marisa (relevamiento).
+ * Respuestas redactadas como BORRADOR por Ale: Marisa debe validarlas
+ * antes de darlas por definitivas.
+ */
+const faqs = [
+  {
+    q: '¿Puedo quedarme a esperarlo?',
+    a: 'Sí. Podés quedarte y mirar cómo trabajamos — nos encanta que veas el trato que recibe tu perrito.',
+  },
+  {
+    q: '¿Cuánto tiempo tarda el servicio?',
+    a: 'Depende del servicio y de cada perrito: nunca apuramos a nadie. Al reservar por WhatsApp te damos una estimación.',
+  },
+  {
+    q: '¿Se le puede cortar el pelo sin bañarlo?',
+    a: 'Sí, el corte solo es posible. Escribinos y coordinamos lo mejor para tu perrito.',
+  },
+  {
+    q: '¿Puedo saber el precio exacto antes de realizar el trabajo?',
+    a: 'Sí, siempre. Te pasamos el presupuesto por WhatsApp antes de empezar, sin sorpresas.',
+  },
+  {
+    q: '¿Puedo llevar todos mis perros juntos?',
+    a: 'Sí. Los turnos se organizan para que ninguno espere de más ni se cruce con otros sin supervisión.',
+  },
+  {
+    q: '¿Cada cuánto es recomendable bañarlos/as?',
+    a: 'Como orientación, cada 3 a 4 semanas, aunque depende del pelo y su estilo de vida. Marisa te asesora en cada visita.',
+  },
+  {
+    q: '¿Cada cuánto es recomendable el mantenimiento del corte?',
+    a: 'Entre 4 y 8 semanas según la raza y el corte. Te avisamos cuándo le toca.',
+  },
+  {
+    q: '¿Cada cuánto se cortan las uñas?',
+    a: 'Se revisan en cada visita; en general cada 3 a 4 semanas. Si hacen ruido al caminar, ya toca.',
+  },
+  {
+    q: '¿Es recomendable darles algo de comer antes de la sesión?',
+    a: 'Mejor con la pancita liviana: evitá una comida grande justo antes, para que esté cómodo y relajado.',
+  },
+];
+---
+
+<section class="faq" id="preguntas">
+  <div class="container">
+    <h2>Preguntas frecuentes</h2>
+    <div class="list">
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+    <p class="cierre">
+      ¿Otra duda? <a href={WA_CONSULTA} target="_blank" rel="noopener">Escribinos por WhatsApp</a>
+    </p>
+  </div>
+</section>
+
+<style>
+  .faq {
+    background: var(--cream-2);
+    padding-block: clamp(3rem, 8vh, 5.5rem);
+  }
+  .faq h2 {
+    font-size: clamp(1.7rem, 3.6vw, 2.5rem);
+    font-weight: 900;
+    margin: 0 0 2rem;
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: 760px;
+  }
+  details {
+    background: var(--white);
+    border: 1px solid rgba(74, 44, 26, 0.12);
+    border-radius: var(--radius);
+    padding: 1rem 1.3rem;
+  }
+  summary {
+    font-weight: 800;
+    cursor: pointer;
+    color: var(--ink);
+  }
+  summary::marker {
+    color: var(--terra);
+  }
+  details p {
+    margin: 0.7rem 0 0;
+    color: var(--ink-soft);
+  }
+  .cierre {
+    margin-top: 1.8rem;
+    font-size: 1.05rem;
+  }
+  .cierre a {
+    font-weight: 800;
+    color: var(--terra);
+  }
+</style>

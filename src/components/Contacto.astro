@@ -1,0 +1,75 @@
+---
+import { WA_RESERVA } from '../config';
+
+/**
+ * TODO(redes): pedir a Marisa las URLs de Instagram y Facebook
+ * para mostrar los botones de "Seguinos".
+ */
+const REDES = {
+  instagram: '',
+  facebook: '',
+};
+---
+
+<section class="contacto" id="contacto">
+  <div class="container contacto-box">
+    <h2>Reservá el turno de tu perrito</h2>
+    <a class="btn btn-wa btn-big" href={WA_RESERVA} target="_blank" rel="noopener">
+      Hablar por WhatsApp
+    </a>
+    <ul class="datos">
+      <li>Paraná, Entre Ríos</li>
+      <li>Atención en local propio y a domicilio</li>
+      <li>Traslados según el caso</li>
+      <li>Días y horarios a coordinar por WhatsApp</li>
+    </ul>
+    {(REDES.instagram || REDES.facebook) && (
+      <div class="redes">
+        <span>Seguinos:</span>
+        {REDES.instagram && <a href={REDES.instagram} target="_blank" rel="noopener">Instagram</a>}
+        {REDES.facebook && <a href={REDES.facebook} target="_blank" rel="noopener">Facebook</a>}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .contacto {
+    padding-block: clamp(3rem, 8vh, 5.5rem);
+  }
+  .contacto-box {
+    text-align: center;
+    max-width: 640px;
+  }
+  .contacto h2 {
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    font-weight: 900;
+    margin: 0 0 1.4rem;
+    text-wrap: balance;
+  }
+  .btn-big {
+    font-size: 1.15rem;
+    padding: 1rem 2.2rem;
+  }
+  .datos {
+    list-style: none;
+    margin: 1.8rem 0 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    color: var(--ink-soft);
+    font-size: 1.02rem;
+  }
+  .redes {
+    margin-top: 1.4rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: baseline;
+  }
+  .redes a {
+    font-weight: 800;
+    color: var(--terra);
+  }
+</style>
